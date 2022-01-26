@@ -1,0 +1,9 @@
+.flexcontent {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+input {
+  margin: 3px;
+}

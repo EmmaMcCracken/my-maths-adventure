@@ -5,6 +5,8 @@ import axios from "axios";
 import { API_BASE } from "./utils/APIFragments";
 import { LogInDropDown } from "./components/LogInDropDown";
 import { getLoggedInUser } from "./utils/getLoggedInUser";
+import { CreateNewUser } from "./components/CreateNewUser";
+import "./css/App.css";
 
 function App(): JSX.Element {
   // STATES:
@@ -45,6 +47,7 @@ function App(): JSX.Element {
         setUserId={setUserId}
         userId={userId}
       />
+      <CreateNewUser />
     </>
   );
 }
