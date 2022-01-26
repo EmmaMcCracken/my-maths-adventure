@@ -3,7 +3,9 @@
 //   preferredname: string;
 //   age: number;
 
+import axios from "axios";
 import { useState } from "react";
+import { API_BASE } from "../utils/APIFragments";
 
 //   qualification: string;
 export function CreateNewUser(): JSX.Element {
@@ -13,8 +15,14 @@ export function CreateNewUser(): JSX.Element {
   const [emailaddress, setEmailaddress] = useState("");
   const [qualification, setQualification] = useState("");
 
-  function handleCreateUser() {
-    // to be defined
+  async function handleCreateUser() {
+    await axios.post(`${API_BASE}/users`, {
+      username: username,
+      preferredname: preferredname,
+      age: age,
+      emailaddress: emailaddress,
+      qualification: qualification,
+    });
   }
 
   return (
@@ -81,7 +89,7 @@ export function CreateNewUser(): JSX.Element {
               <button
                 type="button"
                 className="btn btn-primary"
-                onChange={() => handleCreateUser()}
+                onClick={() => handleCreateUser()}
               >
                 Create user
               </button>
