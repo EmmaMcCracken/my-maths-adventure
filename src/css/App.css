@@ -11,3 +11,8 @@ input {
 .card {
   width: 40%;
 }
+
+.spacey {
+  display: flex;
+  justify-content: space-between;
+}

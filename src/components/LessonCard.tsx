@@ -11,20 +11,22 @@ export default function LessonCard({ lesson }: LessonCardProps): JSX.Element {
   return (
     <>
       <div className="card">
-        <div className="card-header">
-          {manageTime(time).time12 +
-            " on " +
-            manageTime(time).dayOfMonth +
-            " " +
-            manageTime(time).month}
+        <div className="card-header spacey">
+          <div>
+            {" "}
+            {manageTime(time).time12 +
+              " on " +
+              manageTime(time).dayOfMonth +
+              " " +
+              manageTime(time).month}
+          </div>
+          <div>{" " + participants + " total participants"}</div>
         </div>
         <div className="card-body">
           <h5 className="card-title">{title}</h5>
-          <p className="card-text">{description}</p> <br />{" "}
-          <p>{participants + " total participants"}</p>
-          <a href="#" className="btn btn-primary">
-            Add a reflection
-          </a>
+          <p className="card-text">{description}</p>
+
+          <button className="btn btn-primary">Add a reflection</button>
         </div>
       </div>
     </>
