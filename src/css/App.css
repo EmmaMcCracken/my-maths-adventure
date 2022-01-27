@@ -7,3 +7,7 @@
 input {
   margin: 3px;
 }
+
+.card {
+  width: 40%;
+}
