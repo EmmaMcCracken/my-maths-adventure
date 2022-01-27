@@ -5,3 +5,11 @@ export interface IUser {
   age: number;
   qualification: string;
 }
+
+export interface ILesson {
+  lessonid: number;
+  title: string;
+  description: string;
+  time: string;
+  participants: number;
+}
