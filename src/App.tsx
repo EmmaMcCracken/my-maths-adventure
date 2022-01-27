@@ -7,6 +7,7 @@ import { LogInDropDown } from "./components/LogInDropDown";
 import { getLoggedInUser } from "./utils/getLoggedInUser";
 import { CreateNewUser } from "./components/CreateNewUser";
 import "./css/App.css";
+import Lessons from "./components/Lessons";
 
 function App(): JSX.Element {
   // STATES:
@@ -35,8 +36,6 @@ function App(): JSX.Element {
     setUserId(savedUserId ? parseInt(savedUserId) : null);
   }, []);
 
-  console.log("userId state:", userId);
-
   const currentUser = getLoggedInUser(userId, userList);
 
   return (
@@ -48,6 +47,7 @@ function App(): JSX.Element {
         userId={userId}
       />
       <CreateNewUser />
+      {userId !== null && <Lessons userId={userId} />}
     </>
   );
 }
